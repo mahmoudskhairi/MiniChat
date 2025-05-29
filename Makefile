@@ -1,5 +1,5 @@
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror #-std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 NAME1 = server
 NAME2 = client
 

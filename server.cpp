@@ -3,6 +3,9 @@
 #include <netinet/in.h>
 #include <cstring>
 #include <unistd.h>
+#include <cstdio>
+#include <cstdlib>
+
 int main()
 {
     int server_socket = socket(AF_INET, SOCK_STREAM, 0);//protocol: IPPROTO_TCP
@@ -29,7 +32,7 @@ int main()
     }
     while(1)
     {    
-        int client_socket = accept(server_socket, nullptr, nullptr);
+        int client_socket = accept(server_socket, NULL, NULL);
         if (client_socket == -1)
         {
             perror("accepting client was failed!");
@@ -37,9 +40,14 @@ int main()
         }
         char buff[1024];
         memset(&buff, 0 , sizeof(buff));
-        if (recv(client_socket, buff, sizeof(buff), 0) == -1)
+        // if (recv(client_socket, buff, sizeof(buff), 0) == -1)
+        // {
+        //     perror("recv is failed!");
+        //     exit (EXIT_FAILURE);
+        // }
+        if (read(client_socket, buff, sizeof(buff)) == -1)
         {
-            perror("recv are failed!");
+            perror("read is failed!");
             exit (EXIT_FAILURE);
         }
         std::cout << "client message: " << buff << std::endl;}
