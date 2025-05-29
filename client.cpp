@@ -29,7 +29,12 @@ int main(int ac, char *av[])
         exit (EXIT_FAILURE);
     }
     const char *message = av[1];
-    if (send(client_socket, message, strlen(message), 0) == -1)
+    // if (send(client_socket, message, strlen(message), 0) == -1)
+    // {
+    //     perror("message doesen't sent!");
+    //     exit (EXIT_FAILURE);
+    // }
+    if (write (client_socket, message, strlen(message)) == -1)
     {
         perror("message doesen't sent!");
         exit (EXIT_FAILURE);
