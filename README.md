@@ -1,5 +1,6 @@
 <h1>Mini Chat using Sockets in C</h1>
 
+<img src="client-server.png" alt="Client-Server Diagram" style="max-width:100%;height:auto;">
 <p>This repository contains a simple <strong>client-server chat program</strong> implemented in <strong>C</strong> using <strong>sockets</strong>.  
 It demonstrates how two processes can communicate over a network using the <strong>socket API</strong>.</p>
 
